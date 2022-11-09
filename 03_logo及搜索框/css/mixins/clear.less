@@ -1,0 +1,8 @@
+// 用less定义一个函数来清楚浮动
+.clearfix() {
+    &::after {
+        clear: both;
+        display: block;
+        content: '';
+    }
+}

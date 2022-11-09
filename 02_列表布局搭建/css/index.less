@@ -1,0 +1,60 @@
+@import 'mixins/clear.less';
+
+#wrapper {
+    // 头部
+    #header {
+        // 上半部分
+        .headTop {
+            background-color: #eaeaea;
+            height: 30px;
+            // 版心元素
+            .headTopMain {
+                margin: 0 auto;
+                width: 1200px;
+                line-height: 30px;
+                .clearfix();
+                // 左侧
+                .left {
+                    float: left;
+                    h5 {
+                        float: left;
+                        margin-right: 5px;
+                    }
+                    p {
+                        float: left;
+                        a {
+                            // 匹配父元素下第一个元素
+                            &:first-child {
+                                border-right: 1px solid #b3aeae;
+                                padding-right: 5px;
+                                margin-right: 0;
+                            }
+                        }
+                    }
+                }
+                // 右侧
+                .right {
+                    float: right;
+                    nav {
+                        // 为什么a标签父元素要加 font-size: 0;
+                        // 原因：行标签即使设置 margin和padding，还是会有左右间距
+                        // 怎么办？
+                        //  父元素设置 font-size: 0; 然后单独设置该标签的 font-sie值即可。
+                        font-size: 0;
+                        a {
+                            font-size: 12px;
+                            margin-right: 10px;
+                            padding-right: 10px;
+                            border-right: 1px solid #b3aeae;
+                            &:last-child {
+                                border: none;
+                                margin-right: 0;
+                                padding-right: 0;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
